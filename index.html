@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neura Learn - Belajar AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Media/Logo Neura.png" alt="Logo Neura" class="logo-image" />
+      <span>Neura Learn</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#pelajaran">Pelajaran</a></li>
+        <li><a href="#" id="openDaftar">Daftar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="Media/Nebu1.png" alt="Nebu Maskot 1" class="nebu-hero-left" />
+    <div class="hero-center">
+      <img src="Media/Logo Neura.png" alt="Logo Neura" class="hero-logo" />
+      <h1>Selamat Datang di Neura Learn!</h1>
+      <p>Platform pembelajaran AI yang dirancang untuk membantu Anda memahami dan menguasai kecerdasan buatan.</p>
+      <a href="#pelajaran" class="cta-button">Mulai Belajar</a>
+      <a href="#" id="openDaftarHero" class="cta-button daftar-btn">Daftar</a>
+    </div>
+    <img src="Media/Nebu2.png" alt="Nebu Maskot 2" class="nebu-hero-right" />
+  </section>
+
+  <section class="content" id="pelajaran">
+    <h2>Daftar Pelajaran AI</h2>
+    <div class="lesson-container">
+      <div class="lesson">
+        <img src="Media/ICONN.png" alt="AI Dasar" />
+        <div class="lesson-info">
+          <h3>AI Dasar</h3>
+          <p>Pelajari konsep dasar kecerdasan buatan dan aplikasinya dalam kehidupan sehari-hari.</p>
+        </div>
+      </div>
+      <div class="lesson">
+        <img src="Media/ICON.jpeg" alt="Machine Learning" />
+        <div class="lesson-info">
+          <h3>Machine Learning</h3>
+          <p>Pelajari teknik dan algoritma yang digunakan dalam machine learning untuk analisis data.</p>
+        </div>
+      </div>
+      <div class="lesson">
+        <img src="Media/ICONNN.jpeg" alt="Deep Learning" />
+        <div class="lesson-info">
+          <h3>Deep Learning</h3>
+          <p>Pelajari tentang neural networks dan bagaimana mereka digunakan dalam deep learning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="Media/LOGO Neura.png" alt="Nebu Footer" class="nebu-footer" />
+    <p>&copy; 2025 Neura Learn - Semua hak dilindungi.</p>
+  </footer>
+
+  <div class="modal" id="daftarModal">
+    <div class="modal-content">
+      <h2>Daftar Akun Neura Learn</h2>
+      <input type="text" placeholder="Nama Lengkap" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <button>Daftar</button>
+      <button class="close-btn" id="closeDaftar">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const header = document.querySelector("header");
+      header.classList.toggle("scrolled", window.scrollY > 10);
+    });
+
+    const daftarModal = document.getElementById("daftarModal");
+    const openDaftar = document.getElementById("openDaftar");
+    const openDaftarHero = document.getElementById("openDaftarHero");
+    const closeDaftar = document.getElementById("closeDaftar");
+
+    openDaftar.addEventListener("click", e => {
+      e.preventDefault();
+      daftarModal.style.display = "flex";
+    });
+    openDaftarHero.addEventListener("click", e => {
+      e.preventDefault();
+      daftarModal.style.display = "flex";
+    });
+    closeDaftar.addEventListener("click", () => {
+      daftarModal.style.display = "none";
+    });
+    window.addEventListener("click", e => {
+      if (e.target === daftarModal) {
+        daftarModal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
